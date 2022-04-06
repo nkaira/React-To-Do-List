@@ -15,7 +15,7 @@ class TaskDetail extends React.Component {
     };
 
     isComplete(task) {
-        const status = task.complete ? 'complete' : 'active';
+        const status = task?.complete ? 'complete' : 'active';
         return status;
     }
 
@@ -23,13 +23,13 @@ class TaskDetail extends React.Component {
         const targetTaskId = Number(this.props.params.taskId);
         const tasks = this.props.tasks;
         const task = tasks.find(task => task.taskId === targetTaskId);
-        const taskText = task.title;
+        const taskText = task?.title || '-';
         const isComplete = this.isComplete(task);
 
         return (
             <div>
                 <h1>TASK DETAIL:</h1>
-                <h2>TASK STATUS: {isComplete}</h2>
+                <h2>TASK STATUS: {task ? isComplete : '-'}</h2>
                 <h2>TASK TEXT: {taskText}</h2>
                 <button onClick={() => this.goBackHandle()}>Back</button>
             </div>
@@ -38,7 +38,7 @@ class TaskDetail extends React.Component {
 };
 
 TaskDetail.propTypes = {
-    targetTaskId: PropTypes.number.isRequired,
+    targetTaskId: PropTypes.number,
     tasks: PropTypes.array.isRequired,
 };
 

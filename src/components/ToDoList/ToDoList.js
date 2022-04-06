@@ -44,13 +44,13 @@ class ToDoList extends React.Component {
         this.props.setPageAction(page);
     };
 
-    handleCompleteTask(targetId, paginatedTasks) {
+    handleCompleteTask(targetId) {
         const status = this.props.filterStatus.status;
         this.props.completeTaskAction(targetId);
         if (status === FILTER_ALL) {
             return;
         }
-        this.setCurrentPage(paginatedTasks);
+        this.setCurrentPage();
     };
 
     handleModalShow(targetId) {
