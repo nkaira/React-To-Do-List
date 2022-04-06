@@ -36,7 +36,7 @@ Pagination.propTypes = {
     filteredTasks: PropTypes.array.isRequired,
     onClick: PropTypes.func.isRequired,
     setSearchParams: PropTypes.func.isRequired,
-    status: PropTypes.string.isRequired,
+    status: PropTypes.string,
 };
 
 Pagination.defaultProps = {
@@ -77,7 +77,7 @@ class PaginationButton extends React.Component {
 PaginationButton.propTypes = {
     onClick: PropTypes.func.isRequired,
     setSearchParams: PropTypes.func.isRequired,
-    status: PropTypes.string.isRequired,
+    status: PropTypes.string,
 };
 
 PaginationButton.defaultProps = {

@@ -2,13 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import cnBind from "classnames/bind";
 
 import { withUseRouter } from "hoc/withUseRouter";
 import { FILTER_ALL, FILTER_COMPLETE, FILTER_ACTIVE } from "store/filter/filterReducer";
 import styles from "./filterPanel.module.scss";
-
-// const cx = cnBind.bind(styles); // для примера
 
 class FilterPanel extends React.Component {
 
@@ -23,7 +20,6 @@ class FilterPanel extends React.Component {
         const buttonActive = cn(styles.filter__button, { [styles.activeButton]: status === FILTER_ACTIVE });
         const buttonComplete = cn(styles.filter__button, { [styles.activeButton]: status === FILTER_COMPLETE });
         const buttonAll = cn(styles.filter__button, { [styles.activeButton]: status === FILTER_ALL });
-        // const buttonComplete = cx('filter__button', { 'activeButton': status === FILTER_COMPLETE }); // для примера
 
         return (
             <section className={styles.filter}>
@@ -36,8 +32,13 @@ class FilterPanel extends React.Component {
 };
 
 FilterPanel.propTypes = {
-    onChange: PropTypes.func,
-    setSearchParams: PropTypes.func,
+    status: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    setSearchParams: PropTypes.func.isRequired,
+};
+
+FilterPanel.defaultProps = {
+    status: FILTER_ALL,
 };
 
 export default withUseRouter(connect(state => ({

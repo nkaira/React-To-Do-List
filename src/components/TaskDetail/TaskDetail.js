@@ -38,12 +38,8 @@ class TaskDetail extends React.Component {
 };
 
 TaskDetail.propTypes = {
-    targetTaskId: PropTypes.number,
+    targetTaskId: PropTypes.number.isRequired,
     tasks: PropTypes.array.isRequired,
-};
-
-TaskDetail.defaultProps = {
-    tasks: [],
 };
 
 export default withUseRouter(connect(state => ({

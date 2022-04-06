@@ -32,10 +32,6 @@ TaskList.propTypes = {
     onModalShow: PropTypes.func.isRequired,
 };
 
-TaskList.defaultProps = {
-    paginatedTasks: [],
-};
-
 class Task extends React.Component {
     render() {
         const { onModalShow, onComplete, isComplete, description, id } = this.props;
@@ -57,14 +53,13 @@ class Task extends React.Component {
 
 Task.propTypes = {
     onModalShow: PropTypes.func.isRequired,
-    onModalShow: PropTypes.func.isRequired,
+    onComplete: PropTypes.func.isRequired,
     isComplete: PropTypes.bool,
     description: PropTypes.string.isRequired,
-    id: PropTypes.number,
+    id: PropTypes.number.isRequired,
 };
 
 Task.defaultProps = {
-    tasks: [],
     isComplete: false,
 };
 

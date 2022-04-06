@@ -2,8 +2,6 @@ import { connect } from "react-redux";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import TestOne from "components/Navbar/testOne";
-import TestTwo from "components/Navbar/testTwo";
 import ToDoList from "components/ToDoList/ToDoList";
 import TaskDetail from "components/TaskDetail/TaskDetail";
 import { setTasksAction } from "store/tasks/tasksActions";
@@ -39,10 +37,7 @@ class App extends React.Component {
             <div className={styles.header}>
                 <h1 className={styles.title}>To Do List</h1>
                 <Routes>
-                    <Route path='/' element={<ToDoList />} >
-                        {/* <Route path='test1' element={<TestOne />} />
-                        <Route path='test2' element={<TestTwo />} /> */}
-                    </Route>
+                    <Route path='/' element={<ToDoList />} />
                     <Route path='/:taskId' element={<TaskDetail />} />
                 </Routes>
             </div>

@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Outlet } from "react-router-dom";
 
-import Navbar from "components/Navbar/Navbar";
 import Pagination from "components/Pagination/Pagination";
 import FilterPanel from "components/FilterPanel/FilterPanel";
 import ControlPanel from "components/ControlPanel/ControlPanel";
@@ -40,8 +38,6 @@ class ToDoList extends React.Component {
             complete: false,
         });
         this.setState({ inputValue: '' });
-
-        // this.inputRef.current.focusInput();
     };
 
     handlePaginationButton(page) {
@@ -163,8 +159,6 @@ class ToDoList extends React.Component {
                         onOk={this.handleModalOk}
                     />
                 }
-                {/* <Navbar /> */}
-                <Outlet />
             </div>
         );
     };
@@ -172,13 +166,12 @@ class ToDoList extends React.Component {
 
 ToDoList.propTypes = {
     inputValue: PropTypes.string,
-    tasks: PropTypes.object,
+    tasks: PropTypes.object.isRequired,
     currentPage: PropTypes.number.isRequired,
     pageSize: PropTypes.number.isRequired,
 };
 
 ToDoList.defaultProps = {
-    tasks: {},
     currentPage: 1,
     pageSize: 3,
 };
