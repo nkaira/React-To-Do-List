@@ -1,5 +1,6 @@
 # React To Do List (using classes).
 Welcome to my web app. Thats my third work.
+In this project localStorage used as an emulation of requests to the server.
 
 ## Installation
 Firstly make sure that you have latest version of browser installed.
