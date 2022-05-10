@@ -1,5 +1,5 @@
 # React To Do List (using classes).
-Welcome to my web app. Thats my third work.
+Welcome to my web app. That's my third work.
 In this project localStorage used as an emulation of requests to the server.
 
 ## Installation
