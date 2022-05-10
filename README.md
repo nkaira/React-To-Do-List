@@ -1,5 +1,5 @@
 # React To Do List v2.
-Welcome to my web app. That's my third work. The project was written using class components.
+Welcome to my web app. That's my third work. Project was written using class components.
 In this project localStorage used as an emulation of requests to the server.
 
 ## Installation
